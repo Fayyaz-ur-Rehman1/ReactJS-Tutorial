@@ -1,0 +1,121 @@
+What is use Navigation Hook => 
+
+Navigation in React Router means moving from one page to another smoothly without reloading the page.
+For this, React Router v6 provides a hook called useNavigate(), which helps in programmatic navigation.
+
+🔹 What is useNavigate Hook?
+👉 useNavigate() is a built-in hook in React Router v6, used to dynamically navigate to any page.
+
+🔹 What does it do?
+
+Redirects to another page when a button is clicked
+Moves the user to a different page after a form submission
+Sends the user to the dashboard after login
+🔹 Example of useNavigate Hook
+jsx
+Copy
+Edit
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+function Home() {
+  const navigate = useNavigate(); // Using the hook
+
+  function goToAbout() {
+    navigate("/about");  // Dynamically navigates to About page
+  }
+
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <button onClick={goToAbout}>Go to About</button>  
+    </div>
+  );
+}
+
+export default Home;
+📌 What’s happening here?
+
+useNavigate() provides a navigate function.
+When the button is clicked, navigate("/about") will take the user to the About Page without reloading the page! 🚀
+🔹 Back & Forward Navigation (-1 & 1)
+If you want the user to move to the previous or next page, you can use useNavigate() with -1 and 1:
+
+jsx
+Copy
+Edit
+function BackButton() {
+  const navigate = useNavigate();
+
+  return (
+    <button onClick={() => navigate(-1)}>🔙 Go Back</button>  
+  );
+}
+✅ navigate(-1) takes the user to the previous page
+✅ navigate(1) takes the user to the next page
+
+🔹 Conclusion
+✅ useNavigate() is a React Router hook that allows navigation between pages without reloading the page.
+✅ It is used for button clicks, form submissions, and programmatic navigation.
+✅ It also helps in back & forward navigation. 🚀
+
+--------------------------------------------------------------------------------------
+
+React Router me navigation ka matlab hai ek page se doosre page par bina page reload kiye smoothly move karna.
+Iske liye React Router v6 me ek hook aata hai useNavigate(), jo programmatically navigation karne me madad karta hai.
+
+🔹 useNavigate Hook Kya Hai?
+👉 useNavigate() ek built-in hook hai jo React Router v6 me diya gaya hai, jiska use hum dynamically kisi bhi page par navigate karne ke liye karte hain.
+
+🔹 Iska kaam kya hai?
+
+Button click karne par kisi aur page par le jaana
+Form submit hone ke baad user ko dusre page par redirect karna
+Login hone ke baad user ko dashboard par bhejna
+🔹 useNavigate Hook Ka Example
+jsx
+Copy
+Edit
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+function Home() {
+  const navigate = useNavigate(); // Hook ka use kiya
+
+  function goToAbout() {
+    navigate("/about");  // Dynamically About page par le jaayega
+  }
+
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <button onClick={goToAbout}>Go to About</button>  
+    </div>
+  );
+}
+
+export default Home;
+📌 Yahan kya ho raha hai?
+
+useNavigate() se navigate function mila.
+Jab button click hoga, to navigate("/about") ki wajah se user About Page par chala jayega bina page reload kiye! 🚀
+🔹 Back & Forward Navigation (-1 & 1)
+Agar aap chahte hain ki user pichle ya agle page par ja sake, to useNavigate() me -1 aur 1 ka use hota hai:
+
+jsx
+Copy
+Edit
+function BackButton() {
+  const navigate = useNavigate();
+
+  return (
+    <button onClick={() => navigate(-1)}>🔙 Go Back</button>  
+  );
+}
+✅ navigate(-1) pichle page par le jaayega
+✅ navigate(1) aage wale page par le jaayega
+
+🔹 Conclusion
+✅ useNavigate() ek React Router ka hook hai jo bina page reload kiye ek page se doosre page par le jaata hai.
+✅ Ye button clicks, form submit, ya programmatic navigation ke liye use hota hai.
+✅ Isse hum back & forward navigation bhi control kar sakte hain. 🚀

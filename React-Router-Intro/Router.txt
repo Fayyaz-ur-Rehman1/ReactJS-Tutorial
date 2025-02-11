@@ -1,0 +1,45 @@
+What is React Router =>
+
+React Router is a library that handles navigation (page switching) in React applications without reloading the page.
+
+👉 With this, we can switch between multiple pages (Home, About, Contact) without refresh, making the app fast and smooth! 🚀
+
+Example:
+Just like in a single-page React app, React Router provides a way to navigate from Home to About Page easily.
+
+How to Install React Router?
+🔹 Using NPM: npm install react-router-dom
+🔹 Using Yarn: yarn add react-router-dom
+
+Main Features of React Router:
+✅ Fast navigation without reload
+✅ Supports dynamic pages
+✅ Nested routes (pages inside pages)
+✅ Protected routes (Login required pages)
+
+In Short:
+React Router makes page navigation (routing) smooth and efficient in React apps! 🚀
+
+
+------------------------------------------------------------------------------------------------------------------
+
+
+React Router ek library hai jo React applications me navigation (page switching) ka kaam karti hai bina page reload kiye.
+
+👉 Isse hum multiple pages (Home, About, Contact) bina refresh ke switch kar sakte hain, jisse app fast aur smooth chalti hai! 🚀
+
+Example:
+Jaise ek single-page React app me Home se About Page par jaane ka tareeka React Router provide karta hai.
+
+React Router Install Kaise Karein?
+🔹 NPM se: npm install react-router-dom
+🔹 Yarn se: yarn add react-router-dom
+
+React Router Ke Main Features:
+✅ Fast navigation bina reload kiye
+✅ Dynamic pages support
+✅ Nested routes (pages ke andar pages)
+✅ Protected routes (Login required pages)
+
+Short Me:
+React Router React apps me page navigation (routing) smooth aur efficient banata hai! 🚀

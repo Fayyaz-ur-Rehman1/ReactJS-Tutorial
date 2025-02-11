@@ -1,0 +1,73 @@
+Routes vs Route
+
+ What are Routes and Route in React Router?
+In React Router, Routes and Route are used to define and manage different pages. They help in navigating between different pages in a React app without reloading the page.
+
+🔹 What is Routes?
+Routes is a wrapper component that contains multiple <Route> components.
+It ensures that only one matching route is rendered at a time.
+In React Router v5, <Switch> was used, but in v6, it has been replaced with <Routes>.
+📌 Example:
+
+jsx
+Copy
+Edit
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+✅ Here, Routes ensures that only one component (Home or About) is rendered based on the URL.
+
+🔹 What is Route?
+Route is an individual path inside Routes.
+It uses the path prop to set the URL and the element prop to render the component for that URL.
+When a user visits a specific path, the corresponding component is displayed. 🚀
+
+
+------------------------------------------------------------------------------------------
+
+React Router me Routes aur Route ka use alag-alag pages ko define aur manage karne ke liye hota hai. Yeh help karta hai ki ek React app me bina page reload kiye different pages pe navigate kiya ja sake.
+
+🔹 Routes kya hai?
+Routes ek wrapper component hai jo multiple <Route> components ko contain karta hai.
+Yeh ensure karta hai ki sirf ek route match ho aur wahi render ho.
+Pehle React Router v5 me <Switch> ka use hota tha, par ab v6 me <Routes> use hota hai.
+📌 Example:
+
+jsx
+Copy
+Edit
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import About from "./About";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+✅ Yahan Routes ensure karega ki sirf ek component (Home ya About) URL ke hisaab se render ho.
+
+🔹 Route kya hai?
+Route ek individual path define karta hai jo Routes ke andar hota hai.
+Yeh path prop ka use karke URL set karta hai aur element prop ke through us URL ke liye component render karta hai.
+Jab koi user uss path par jata hai, to wahi component show hota hai.
