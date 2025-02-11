@@ -1,0 +1,80 @@
+What is useState Hook => 
+
+React's useState is a Hook that is used to manage state inside functional components. Earlier, if we needed to use state in a component, we had to write a class component. But after the introduction of useState, it became possible to maintain state in functional components as well.
+
+How Does It Work?
+useState is a function that returns two things:
+
+The current value of the state
+A function to update that value
+If we understand it in a simple way, useState is like a box where we can store data and change it whenever needed.
+
+Example:
+jsx
+Copy
+Edit
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0); // Initial value 0
+
+  return (
+    <div>
+      <h2>Counter: {count}</h2>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
+    </div>
+  );
+}
+
+export default Counter;
+Understanding the Code:
+useState(0) → We created a state variable count with an initial value of 0.
+setCount → This is a function that will change the value of count.
+onClick={() => setCount(count + 1)} → When the button is clicked, count will increase by 1.
+onClick={() => setCount(count - 1)} → This button will decrease the value of count.
+Important Points to Remember
+✅ useState is used only in functional components.
+✅ Its initial value can be of any type (number, string, object, array, etc.).
+✅ To change the state, you must use the setState function.
+
+
+-------------------------------------------
+
+React ka useState ek Hook hai jo functional components ke andar state manage karne ke liye use hota hai. Pehle, agar humein kisi component me state use karni hoti thi, toh humein class component likhna padta tha. Lekin useState ke aane ke baad functional components me bhi state maintain karna possible ho gaya hai.
+
+Kaise Kaam Karta Hai?
+useState ek function hai jo do cheezein return karta hai:
+
+State ka current value
+Us value ko update karne ka ek function
+Agar simple tarike se samjhein, toh useState ek box jaisa hai jisme hum data rakh sakte hain aur jab chaahein, us data ko badal bhi sakte hain.
+
+Example:
+jsx
+Copy
+Edit
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0); // Initial value 0
+
+  return (
+    <div>
+      <h2>Counter: {count}</h2>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+      <button onClick={() => setCount(count - 1)}>Decrease</button>
+    </div>
+  );
+}
+
+export default Counter;
+Samajhne Ka Tarika:
+useState(0) → Humne ek state banayi count jiska initial value 0 rakha.
+setCount → Ye ek function hai jo count ka value change karega.
+onClick={() => setCount(count + 1)} → Jab button click hoga, count ki value 1 se badh jayegi.
+onClick={() => setCount(count - 1)} → Ye button count ki value kam karega.
+Points Jo Yaad Rakhne Chahiye
+✅ useState sirf functional components me use hota hai.
+✅ Iska initial value kisi bhi type ka ho sakta hai (number, string, object, array, etc.).
+✅ State change karne ke liye setState function ka use karna zaroori hai.

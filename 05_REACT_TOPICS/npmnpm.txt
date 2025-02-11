@@ -1,0 +1,98 @@
+If this question is asked in an interview about whether npm or npx is a better way to create a React app and why, you can answer like this:
+
+Answer:
+Using npx to create a React app is better, and here’s why:
+
+No Global Installation Required:
+When using npx create-react-app, I don’t need to install the create-react-app tool globally. This command temporarily downloads create-react-app and completes the setup.
+
+Always Up-to-Date:
+npx always uses the latest version of the tool, so I don’t have to worry about manually updating the package. If I were to use npm and globally install create-react-app, I’d have to manage its version updates.
+
+Simplicity:
+The npx process is fast and simple. With just one command, I can set up my React project easily.
+
+Example:
+
+bash
+Copy code
+npx create-react-app my-app
+This approach saves system storage and allows me to work without any version conflicts.
+
+Conclusion:
+Therefore, I prefer npx for creating a React app.
+
+----------------------------------------------------------
+
+When you provide a project name with create-react-app, there are certain restrictions for the name. While there’s no strict character limit, the following conditions must be followed:
+
+Key Rules for React Project Names:
+Valid NPM Package Name:
+The project name must be a valid npm package name, as React apps internally rely on npm dependencies.
+
+Length Recommendation:
+Technically, there’s no strict character limit for npm package names, but an extremely long name isn’t practical. A reasonable maximum is around 214 characters, as this aligns with limitations of tar (a Unix archiving tool).
+
+Allowed Characters:
+
+Only lowercase letters, numbers, hyphens (-), and underscores (_) are allowed.
+Spaces, uppercase letters, and special characters (like @, $, %) are not allowed.
+Name Should Not Conflict:
+Your project name must not conflict with an existing npm package name.
+
+Example:
+Valid project names:
+
+my-react-app
+project_123
+hello-world
+Invalid project names:
+
+MyReactApp (uppercase letters are not allowed)
+react app (spaces are not allowed)
+hello@world (special character @ is not allowed)
+Conclusion:
+Practically, a React project name can have up to 214 characters, but it’s better to keep it short, simple, and meaningful for better readability and maintenance.
+
+
+
+Ye jo approach hai, wo React app banane ka ek tareeqa hai. Sab se pehle, ek popular approach hai jo npx ka use karti hai. Jab aap npx create-react-app likhte hain followed by project ka naam, to npx jo ek NPM package runner hota hai, wo create-react-app ko run kar deta hai bina usko globally install kiye.
+
+npx ek aisa tool hai jo jab aap Node.js install karte hain, to automatically install ho jata hai. Iska faida ye hai ke aapko manually create-react-app ko install karne ki zarurat nahi hoti, aur aap directly React app create kar sakte hain. Isme npx, create-react-app ka latest version automatically run kar leta hai.
+
+Dusri approach mein, aap create-react-app ko globally install karte hain NPM ke through. Isme aap command likhte hain: npm install create-react-app -g aur phir create-react-app ke saath project ka naam deke app create karte hain.
+
+Mujhe pehli approach zyada pasand hai, kyunke ismein aapko create-react-app ko globally install nahi karna padta aur aapko uska version update karne ki fikar nahi hoti. Lekin doosri approach bhi kaafi common hai, isliye maine dono approach ke bare mein bataya, taake agar aap kisi aur video ya article mein yeh dekhein to aapko confusion na ho.
+
+Ab jab humne React app create karna samajh liya, agle video mein hum Applications folder structure ke baare mein seekhenge.
+
+
+
+Chalo, mai tumhe "globally" ka concept asaan tarike se samjhata hoon.
+
+Jab hum kisi package ko globally install karte hain, iska matlab hai ki wo package tumhare computer ke har project ke liye available ho jata hai. Iska fayda ye hai ki tum har project ke liye alag se us package ko install nahi karte. Lekin iska ek nuksaan bhi hai: agar package ka naya version aaye, to tumhe manually update karna padta hai.
+
+Example ke saath samajhte hain:
+Globally Install karna:
+Jab tum command likhte ho:
+
+bash
+Copy code
+npm install create-react-app -g
+Iska matlab hai ki create-react-app tumhare system ke global scope mein install ho jata hai. Ab tum kisi bhi folder mein jaake create-react-app my-app likhoge, to wo kaam karega.
+
+Locally (npx use karte hain):
+Jab tum command likhte ho:
+
+bash
+Copy code
+npx create-react-app my-app
+To yeh package globally install nahi hota. Bas temporary download hota hai aur apna kaam karke delete ho jata hai. Tumhe iske version ki tension nahi leni padti, kyunki ye hamesha latest version use karta hai.
+
+Globally aur Locally ka fark:
+Feature	Globally Installed	npx (Locally)
+Installation	Ek baar install karna padta hai	Install ki zarurat nahi hai
+Version Updates	Tumhe manually update karna padta hai	Hamesha latest version use hota hai
+Storage	System ke global scope mein space leta hai	Temporary use karta hai (No storage)
+Meri Advice:
+Agar tum beginner ho, to npx ka use karo, kyunki ye simple hai aur tumhe extra maintenance ki tension nahi hoti. Global installation ka use tab karo jab kisi package ko bar-bar alag projects mein use karna ho aur tum sure ho ke wo version frequently update nahi karega.

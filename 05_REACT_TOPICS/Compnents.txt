@@ -1,0 +1,54 @@
+What are Components in React?
+In React, a component represents a part of the user interface (UI). Think of an application as being divided into different parts, each handled by a separate component.
+
+For example, your application might have:
+
+A Header component.
+A Sidebar component.
+A Main Content component.
+A Footer component.
+A Root component that holds all these components together (commonly called the App Component).
+So, components are like building blocks that together form your entire application.
+
+
+
+Key Features of Components
+Reusable:
+Components can be used multiple times with different properties.
+For instance, a Sidebar component could be reused for both the Left Sidebar and the Right Sidebar by passing different properties.
+
+Nested Components:
+Components can contain other components.
+For example, the App Component contains the Header, Sidebar, Main Content, and Footer components.
+
+
+
+Where is the Component Code Written?
+The code for a React component is usually written in a JavaScript file.
+
+For example, the App Component might be in a file called App.js.
+React also supports .jsx files for writing components, but in this series, .js will be used for simplicity.
+
+
+Types of Components in React
+React has two main types of components:
+
+Stateless Functional Components:
+
+These are simple JavaScript functions that return HTML-like code (called JSX).
+Example:
+function Welcome() {
+    return <h1>Hello, Vishwas</h1>;
+}
+
+
+Stateful Class Components:
+
+These are ES6 classes that extend React’s Component class.
+They must have a render() method, which returns JSX.
+Example:
+class Welcome extends React.Component {
+    render() {
+        return <h1>Hello, Vishwas</h1>;
+    }
+}

@@ -1,0 +1,22 @@
+What is Hooks =>
+
+React Hooks are a feature in React.js that empower functional components. With Hooks, you can manage state, use lifecycle methods, and handle complex logic in functional components without using classes. Previously, these features were only available in class components, but now Hooks have made everything easier!
+
+What Are Hooks? (With a Simple Example)
+Hooks are just functions that "hook into" React. For example:
+
+useState Hook: Manages state (data).
+useEffect Hook: Handles side effects (like API calls, DOM changes).
+useContext, useReducer, etc.: For more advanced features.
+
+------------------------------
+
+React Hooks ek aisa feature hai jo React.js mein functional components ko power deta hai. Hooks ki madad se aap functional components mein bhi state manage kar sakte ho, lifecycle methods ka use kar sakte ho, aur complex logic handle kar sakte ho bina class ke. Pehle, class components hi use hote the in features ke liye, lekin ab Hooks ne sab kuch aasan bana diya!
+
+Kya Hote Hain Hooks? (Simple Example ke Saath)
+Hooks bas functions hain jo React se "hook into" karte hain. Jaise:
+
+useState Hook: State (data) ko manage karne ke liye.
+useEffect Hook: Side effects (jaise API calls, DOM changes) handle karne ke liye.
+useContext, useReducer, etc.: Aur bhi advanced features ke liye.
+

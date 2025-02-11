@@ -1,0 +1,146 @@
+What is useMemo Hook => 
+
+👀 What is useMemo?
+The useMemo hook in React is used for performance optimization. It memoizes (remembers) the result of a computationally expensive function, so that it doesn't get recalculated on every render.
+
+When dealing with heavy calculations, data filtering, or sorting, and unnecessary re-executions are happening on every render, useMemo helps in optimizing performance.
+
+📌 Basic Structure of useMemo
+jsx
+Copy
+Edit
+const memoizedValue = useMemo(() => computeFunction(), [dependencies]);
+✅ computeFunction() → The function whose result you want to memoize (remember).
+✅ [dependencies] → The function will only re-execute when these values change.
+
+📌 Simple Example Using useMemo
+jsx
+Copy
+Edit
+import React, { useState, useMemo } from "react";
+
+// Expensive Calculation Function
+const expensiveCalculation = (num) => {
+    console.log("Calculating...");
+    let result = 0;
+    for (let i = 0; i < 1000000000; i++) {
+        result += num;
+    }
+    return result;
+};
+
+const App = () => {
+    const [count, setCount] = useState(0);
+    const [input, setInput] = useState(1);
+
+    // ✅ useMemo ensures that expensiveCalculation only runs when `input` changes
+    const computedValue = useMemo(() => expensiveCalculation(input), [input]);
+
+    return (
+        <div>
+            <h2>Count: {count}</h2>
+            <button onClick={() => setCount(count + 1)}>Increase Count</button>
+
+            <h2>Computed Value: {computedValue}</h2>
+            <input
+                type="number"
+                value={input}
+                onChange={(e) => setInput(parseInt(e.target.value))}
+            />
+        </div>
+    );
+};
+
+export default App;
+📌 What’s Happening in This Code?
+1️⃣ expensiveCalculation(input) is a heavy function that could slow down the app if it ran on every render.
+2️⃣ useMemo ensures that this function only runs when input changes.
+3️⃣ computedValue is memoized, so if only count updates, the calculation does not run again.
+
+📌 When to Use useMemo?
+✅ When using expensive calculations (sorting, filtering, large loops).
+✅ When you want to reduce unnecessary re-rendering.
+✅ When optimizing a computed value that does not need to be recalculated on every render.
+
+📌 Summary
+✔ useMemo remembers the result of a function to avoid unnecessary calculations.
+✔ It improves performance by preventing unnecessary re-executions.
+✔ Best used for optimizing expensive operations.
+
+----------------------------------------------------------------------------------------------------
+
+👀 useMemo Kya Hai?
+React ka useMemo hook performance optimization ke liye use hota hai. Yeh kisi bhi computationally expensive function (matlab jo zyada calculation kare) ko memoize (yaad) kar leta hai taa ke har render pe dubara calculate na ho.
+
+Jab koi heavy calculation ya data filtering/sorting ho, aur har render pe unnecessary execution ho raha ho, tab useMemo ka use kiya jata hai.
+
+📌 Basic Structure of useMemo
+jsx
+Copy
+Edit
+const memoizedValue = useMemo(() => computeFunction(), [dependencies]);
+✅ computeFunction() → Jo function aap yaad rakhna (memoize) chahte hain.
+✅ [dependencies] → Jab ye values change hongi, tabhi function dobara execute hoga.
+
+📌 Simple Example Using useMemo
+jsx
+Copy
+Edit
+import React, { useState, useMemo } from "react";
+
+// Expensive Calculation Function
+const expensiveCalculation = (num) => {
+    console.log("Calculating...");
+    let result = 0;
+    for (let i = 0; i < 1000000000; i++) {
+        result += num;
+    }
+    return result;
+};
+
+const App = () => {
+    const [count, setCount] = useState(0);
+    const [input, setInput] = useState(1);
+
+    // ✅ useMemo se expensiveCalculation sirf tabhi chalega jab input change hoga
+    const computedValue = useMemo(() => expensiveCalculation(input), [input]);
+
+    return (
+        <div>
+            <h2>Count: {count}</h2>
+            <button onClick={() => setCount(count + 1)}>Increase Count</button>
+
+            <h2>Computed Value: {computedValue}</h2>
+            <input
+                type="number"
+                value={input}
+                onChange={(e) => setInput(parseInt(e.target.value))}
+            />
+        </div>
+    );
+};
+
+export default App;
+📌 Is Code Mein Kya Ho Raha Hai?
+1️⃣ expensiveCalculation(input) ek heavy function hai jo har render pe slow ho sakta tha.
+2️⃣ useMemo ka use kiya taa ke ye function sirf tabhi chale jab input change ho.
+3️⃣ computedValue memoized hai, isliye agar sirf count change ho, toh calculation dobara nahi hogi.
+
+📌 Kab useMemo Use Karein?
+✅ Jab aap expensive calculations (sorting, filtering, large loops) use kar rahe ho.
+✅ Jab aap re-rendering reduce karna chahte ho.
+✅ Jab aap kisi computed value ko optimize karna chahte ho.
+
+📌 Summary
+✔ useMemo kisi function ka result yaad rakhne ke liye use hota hai.
+✔ Yeh performance improve karta hai aur unnecessary calculations rokta hai.
+✔ Best practice hai jab aap expensive operations optimize kar rahe ho.
+
+
+----------------------------------------------------------------------------------------------------------
+useMemo vs useCallback
+
+1️⃣ useMemo kisi function ka result yaad rakhta hai taa ke har render pe dobara calculate na ho. ✅
+2️⃣ useCallback kisi function ko khud yaad rakhta hai taa ke har render pe naye function na bane. ✅
+3️⃣ useMemo tab use hota hai jab koi heavy calculation ya data processing ho. 🚀
+4️⃣ useCallback tab use hota hai jab kisi function ko child component me pass karna ho aur unnecessary re-renders rokne ho. 🔥

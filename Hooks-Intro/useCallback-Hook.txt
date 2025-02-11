@@ -1,0 +1,122 @@
+What is useCallback Hook => 
+
+👀 What is useCallback?
+The useCallback hook in React is used for performance optimization. It memoizes (remembers) a function so that it does not get recreated on every render. Instead, it only gets created again when its dependencies change.
+
+📌 Basic Structure of useCallback
+jsx
+Copy
+Edit
+const memoizedFunction = useCallback(callbackFunction, [dependencies]);
+✅ callbackFunction → The function you want to remember.
+✅ [dependencies] → The function recreates only if these values change.
+
+📌 Simple Example Using useCallback
+jsx
+Copy
+Edit
+import React, { useState, useCallback } from "react";
+
+// A child component that re-renders only when its function changes
+const Button = React.memo(({ handleClick }) => {
+    console.log("Button re-rendered");
+    return <button onClick={handleClick}>Click Me</button>;
+});
+
+const App = () => {
+    const [count, setCount] = useState(0);
+
+    // ✅ Using useCallback to ensure the function is not recreated on every render
+    const handleClick = useCallback(() => {
+        setCount(prevCount => prevCount + 1);
+    }, []);
+
+    return (
+        <div>
+            <h2>Count: {count}</h2>
+            <Button handleClick={handleClick} />
+        </div>
+    );
+};
+
+export default App;
+📌 What’s Happening in This Code?
+1️⃣ useCallback ensures that handleClick is not recreated on every render.
+2️⃣ React.memo prevents the Button component from unnecessary re-renders.
+3️⃣ Now, the Button only re-renders when handleClick changes.
+
+📌 When to Use useCallback?
+✅ When passing functions to child components, so they don’t re-render unnecessarily.
+✅ When optimizing performance in large applications.
+✅ When using React.memo to optimize child components.
+
+📌 Summary
+✔ useCallback remembers a function so that it’s not recreated on every render.
+✔ It improves performance by preventing unnecessary re-renders.
+✔ It’s a best practice when optimizing child components with React.memo.
+
+-----------------------------------------------------------------------------------------------------------------
+
+👀 useCallback Kya Hai?
+React ka useCallback hook performance optimize karne ke liye use hota hai. Yeh ek function ko memoize (yaad) karta hai taa ke har render pe naye function na banein, sirf tab bane jab dependencies change hoon.
+
+📌 useCallback Ka Basic Structure
+jsx
+Copy
+Edit
+const memoizedFunction = useCallback(callbackFunction, [dependencies]);
+✅ callbackFunction → Jo function aap yaad rakhna chahte hain.
+✅ [dependencies] → Jab yeh values change hongi tabhi function dobara create hoga.
+
+📌 Simple Example Using useCallback
+jsx
+Copy
+Edit
+import React, { useState, useCallback } from "react";
+
+// Ek child component jo sirf tab re-render karega jab iska function change hoga
+const Button = React.memo(({ handleClick }) => {
+    console.log("Button re-rendered");
+    return <button onClick={handleClick}>Click Me</button>;
+});
+
+const App = () => {
+    const [count, setCount] = useState(0);
+
+    // ✅ useCallback ka use kiya taa ke function har render pe dubara na bane
+    const handleClick = useCallback(() => {
+        setCount(prevCount => prevCount + 1);
+    }, []);
+
+    return (
+        <div>
+            <h2>Count: {count}</h2>
+            <Button handleClick={handleClick} />
+        </div>
+    );
+};
+
+export default App;
+📌 Is Code Mein Kya Ho Raha Hai?
+1️⃣ useCallback ensure karta hai ke handleClick har render pe dobara create na ho.
+2️⃣ React.memo child component (Button) ko unnecessary re-renders se bachata hai.
+3️⃣ Ab Button sirf tabhi re-render karega jab handleClick change hoga.
+
+📌 useCallback Kab Use Karein?
+✅ Jab aap child components ko function pass kar rahe ho taa ke woh unnecessary re-render na karein.
+✅ Jab aap performance optimization karna chahte hain large applications mein.
+✅ Jab aap React.memo ke sath memoized functions use karna chahte hain.
+
+📌 Summary
+✔ useCallback ek function yaad rakhta hai taa ke har render pe naye function na banein.
+✔ Yeh performance improve karta hai aur unnecessary re-renders rokta hai.
+✔ Best practice hai jab aap React.memo ke sath child components optimize kar rahe ho.
+
+------------------------------------------------------------------
+
+useMemo vs useCallback
+
+1️⃣ useMemo kisi function ka result yaad rakhta hai taa ke har render pe dobara calculate na ho. ✅
+2️⃣ useCallback kisi function ko khud yaad rakhta hai taa ke har render pe naye function na bane. ✅
+3️⃣ useMemo tab use hota hai jab koi heavy calculation ya data processing ho. 🚀
+4️⃣ useCallback tab use hota hai jab kisi function ko child component me pass karna ho aur unnecessary re-renders rokne ho. 🔥

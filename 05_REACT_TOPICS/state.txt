@@ -1,0 +1,12 @@
+State : In React, state is an object that stores data within a component. In functional components, state is managed using the useState hook, allowing the component's UI to be dynamically updated.
+
+Props vs State React me:
+Props parent component se child component tak data pass karte hain, jabki State component ke andar ka apna data hota hai.
+
+Props immutable hote hain, yani unhe change nahi kiya ja sakta, lekin State mutable hoti hai aur change ki ja sakti hai.
+
+Props ka use static data ya functions ko pass karne ke liye hota hai, jabki State dynamic data ko manage karti hai.
+
+Functional components me props props parameter se access kiye jaate hain, aur state useState hook ke through manage hoti hai.
+
+Props component ke bahar se control hote hain, lekin State component ke andar se control hoti hai.

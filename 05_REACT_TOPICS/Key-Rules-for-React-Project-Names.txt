@@ -1,0 +1,29 @@
+When you provide a project name with create-react-app, there are certain restrictions for the name. While there’s no strict character limit, the following conditions must be followed:
+
+Key Rules for React Project Names:
+Valid NPM Package Name:
+The project name must be a valid npm package name, as React apps internally rely on npm dependencies.
+
+Length Recommendation:
+Technically, there’s no strict character limit for npm package names, but an extremely long name isn’t practical. A reasonable maximum is around 214 characters, as this aligns with limitations of tar (a Unix archiving tool).
+
+Allowed Characters:
+
+Only lowercase letters, numbers, hyphens (-), and underscores (_) are allowed.
+Spaces, uppercase letters, and special characters (like @, $, %) are not allowed.
+Name Should Not Conflict:
+Your project name must not conflict with an existing npm package name.
+
+Example:
+Valid project names:
+
+my-react-app
+project_123
+hello-world
+Invalid project names:
+
+MyReactApp (uppercase letters are not allowed)
+react app (spaces are not allowed)
+hello@world (special character @ is not allowed)
+Conclusion:
+Practically, a React project name can have up to 214 characters, but it’s better to keep it short, simple, and meaningful for better readability and maintenance.

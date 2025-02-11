@@ -1,0 +1,14 @@
+Babel is a JavaScript compiler that helps convert modern JavaScript (ES6+ and beyond) code into backward-compatible versions that older browsers can understand. In the context of React, Babel is commonly used to transpile JSX (JavaScript XML) into plain JavaScript. JSX is a syntax extension that allows you to write HTML-like code within JavaScript, and Babel ensures this is converted to standard JavaScript that browsers can execute.
+
+For example:
+If you write this JSX code:
+
+jsx
+Copy code
+const element = <h1>Hello, world!</h1>;
+Babel converts it into:
+
+javascript
+Copy code
+const element = React.createElement('h1', null, 'Hello, world!');
+This allows developers to use modern features and syntax while ensuring compatibility with different environments.

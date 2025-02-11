@@ -1,0 +1,77 @@
+What is useContext Hook => 
+
+In React.js, useContext is a built-in hook that allows any component to directly access context data without props drilling (i.e., passing props from parent to child manually). It works with React’s Context API.
+
+When to Use useContext?
+When you need to share data across multiple components without passing props at every level, useContext is useful.
+
+How Does It Work?
+Creating a Context – Use createContext() to create a context.
+Setting Up a Provider – Use Provider to supply data.
+Using useContext to Consume Data – Use useContext hook to access data.
+
+
+import React, { createContext, useContext } from "react";
+
+// Step 1: Create Context
+const MyContext = createContext();
+
+const ChildComponent = () => {
+  // Step 3: Access data using useContext
+  const value = useContext(MyContext);
+  return <h2>Context Value: {value}</h2>;
+};
+
+const App = () => {
+  return (
+    // Step 2: Provide the value using Provider
+    <MyContext.Provider value="Hello, Fayyaz!">
+      <ChildComponent />
+    </MyContext.Provider>
+  );
+};
+
+export default App;
+What’s Happening Here?
+Created MyContext to store data.
+Used MyContext.Provider to pass the value "Hello, Fayyaz!" so all child components can access it.
+Used useContext(MyContext) inside ChildComponent to directly access the value without passing props.
+Benefits of useContext?
+✔ Solves the props drilling problem.
+✔ Keeps the code clean and simple.
+✔ Makes state management easier in large applications.
+
+----------------------------------------------------------------------------------
+
+React.js mein useContext ek built-in hook hai jo kisi bhi component ko context ka data directly access karne deta hai bina props drilling ke (matlab bina parent se child tak props bhejne ke). Yeh React ke Context API ke sath use hota hai.
+
+useContext ka use kab karein?
+Jab humein kisi bhi data ko multiple components mein share karna ho bina har jagah props pass kiye, tab hum useContext use karte hain.
+
+Kaise kaam karta hai?
+Context Create Karna - createContext() ka use karke ek context banana padta hai.
+Provider Setup Karna - Provider ka use karke data provide karna padta hai.
+Consumer ya useContext ka Use - useContext hook ka use karke data access karna padta hai.
+
+
+import React, { createContext, useContext } from "react";
+
+// Step 1: Context Create Karo
+const MyContext = createContext();
+
+const ChildComponent = () => {
+  // Step 3: useContext se data access karo
+  const value = useContext(MyContext);
+  return <h2>Context Value: {value}</h2>;
+};
+
+const App = () => {
+  return (
+    // Step 2: Provider se value pass karo
+    <MyContext.Provider value="Hello, Fayyaz!">
+      <ChildComponent />
+    </MyContext.Provider>
+  );
+};
+
+export default App;

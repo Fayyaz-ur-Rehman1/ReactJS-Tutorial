@@ -1,0 +1,32 @@
+React.js is a JavaScript library used for building UI (User Interfaces). It was created and is maintained by Facebook. Its purpose is to create fast and interactive web applications. React primarily focuses on a component-based architecture, which makes the code modular and reusable.
+
+Features of React.js:
+Component-based Architecture:
+In React, the UI is divided into small components that are independent and reusable. For example, a button, a navbar, or a card can each be a separate component.
+
+Virtual DOM:
+React doesn’t work directly with the actual DOM. Instead, it uses a Virtual DOM, which is a lightweight copy of the browser’s actual DOM. It detects changes quickly and updates only the necessary parts, making performance faster.
+
+Declarative Approach:
+In React, you just define how the UI should look, and React automatically updates it when the data changes.
+
+JSX (JavaScript XML):
+This is a syntax that allows you to write HTML within JavaScript. Example:
+
+const element = <h1>Hello, React!</h1>;
+
+
+React Hooks:
+Hooks are used within functional components to manage state and lifecycle methods. Examples include useState and useEffect.
+
+
+How React Works:
+You create components that combine HTML and JavaScript.
+These components render themselves based on data (props or state).
+Whenever the data updates, React uses the Virtual DOM to make only the necessary changes.
+
+
+Why Use React?
+It’s fast and efficient (thanks to the Virtual DOM).
+Reusable components make the code clean and manageable.
+It’s perfect for building large-scale applications.

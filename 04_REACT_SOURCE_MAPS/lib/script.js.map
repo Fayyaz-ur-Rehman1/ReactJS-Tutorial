@@ -1,0 +1,25 @@
+{
+    "version": 3,
+    "file": "script.js",
+    "names": [
+        "user",
+        "h1",
+        "React",
+        "createElement",
+        "Fragment",
+        "root",
+        "ReactDOM",
+        "createRoot",
+        "document",
+        "querySelector",
+        "render"
+    ],
+    "sources": [
+        "../script.js"
+    ],
+    "sourcesContent": [
+        "// const h2 = <h1>Hello React</h1>;\r\n// const root = ReactDOM.createRoot(document.querySelector(\"#root\"));\r\n// root.render(h2);\r\n\r\n\r\n// const container = (\r\n//     <div className=\"container\" id=\"container\">\r\n//         <section>\r\n//             <p style={{ backgroundColor: \"yellow\", padding: \"17px\", fontSize: \"20px\" }}>\r\n//                 The library for web and native user interface\r\n//             </p>\r\n//             <img\r\n//                 src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLPLQGezkpT1ntM2T0k3TR0yY75wevMpjLKA&s\"\r\n//                 style={{ width: 200 }} />\r\n//         </section>\r\n\r\n//         <section>\r\n//             <form>\r\n//                 <div className=\"input-group\"><label htmlFor=\"username\">Username</label><input id=\"username\" /></div>\r\n//                 <div className=\"input-group\"><label htmlFor=\"password\">Password</label><input type=\"password\" id=\"password\" />\r\n//                 </div>\r\n//             </form>\r\n//         </section>\r\n//     </div >)\r\n\r\n// const root = ReactDOM.createRoot(document.querySelector(\"#root\"));\r\n// root.render(container);\r\n\r\n\r\nlet user = \"fayyazurrehman\"\r\nlet h1 = (\r\n    <>\r\n        <h2>Hello {user}</h2>\r\n        <h2>add the value 5 + 8 = {5 + 8}</h2>\r\n    </>\r\n)\r\n\r\nconst root = ReactDOM.createRoot(document.querySelector(\"#root\"));\r\nroot.render(h1);"
+    ],
+    "mappings": "AAAA;AACA;AACA;;AAGA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;AAEA;AACA;;AAGA,IAAIA,IAAI,GAAG,gBAAgB;AAC3B,IAAIC,EAAE,gBACFC,KAAA,CAAAC,aAAA,CAAAD,KAAA,CAAAE,QAAA,qBACIF,KAAA,CAAAC,aAAA,aAAI,QAAM,EAACH,IAAS,CAAC,eACrBE,KAAA,CAAAC,aAAA,aAAI,wBAAsB,EAAC,CAAC,GAAG,CAAM,CACvC,CACL;AAED,MAAME,IAAI,GAAGC,QAAQ,CAACC,UAAU,CAACC,QAAQ,CAACC,aAAa,CAAC,OAAO,CAAC,CAAC;AACjEJ,IAAI,CAACK,MAAM,CAACT,EAAE,CAAC",
+    "ignoreList": []
+}

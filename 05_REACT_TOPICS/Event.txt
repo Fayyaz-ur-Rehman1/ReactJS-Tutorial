@@ -1,0 +1,25 @@
+In React, an event is a response to user actions (like click, input, hover), which is handled to control the component's behavior.
+
+These events are similar to JavaScript DOM events, but in React, camelCase and JSX syntax are used.
+
+Mouse Events:
+onClick
+onDoubleClick
+onMouseEnter, onMouseLeave
+
+Keyboard Events:
+onKeyDown
+onKeyUp
+onKeyPress
+
+Form Events:
+onSubmit
+onChange
+onFocus, onBlur
+
+Touch Events:
+onFocus
+onFocus
+
+Wheel Event:
+onWheel

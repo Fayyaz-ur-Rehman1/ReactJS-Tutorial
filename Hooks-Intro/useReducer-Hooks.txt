@@ -1,0 +1,118 @@
+ What is Hooks Reducer => 
+
+useReducer Hook in React (Simple Explanation + Example)
+👀 What is useReducer?
+The useReducer hook in React is used to manage state. It is better than useState when handling complex state changes.
+
+📌 Basic Structure of useReducer
+
+const [state, dispatch] = useReducer(reducerFunction, initialState);
+✅ state → Stores the current state
+✅ dispatch → Sends actions to update the state
+✅ reducerFunction → Contains the logic for updating the state
+✅ initialState → The initial value of the state
+
+📌 Simple Counter Example Using useReducer
+jsx
+Copy
+Edit
+import React, { useReducer } from "react";
+
+// Step 1: Reducer Function (Handles State Updates)
+const reducer = (state, action) => {
+    if (action.type === "INCREMENT") {
+        return { count: state.count + 1 };
+    }
+    if (action.type === "DECREMENT") {
+        return { count: state.count - 1 };
+    }
+    return state;
+};
+
+// Step 2: Initial State
+const initialState = { count: 0 };
+
+const Counter = () => {
+    // Step 3: Using the useReducer Hook
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    return (
+        <div>
+            <h2>Count: {state.count}</h2>
+            <button onClick={() => dispatch({ type: "INCREMENT" })}>+</button>
+            <button onClick={() => dispatch({ type: "DECREMENT" })}>-</button>
+        </div>
+    );
+};
+
+export default Counter;
+📌 What is Happening in This Code?
+1️⃣ Created a reducer function that updates the state (INCREMENT, DECREMENT).
+2️⃣ Defined the initial state { count: 0 }.
+3️⃣ Used the useReducer hook to get the state and dispatch function.
+4️⃣ Sent actions using dispatch({ type: "INCREMENT" }) to update the state.
+
+📌 Summary
+✅ The useReducer hook is used for state management, especially when dealing with complex logic.
+✅ It works similarly to Redux, where dispatch() is used to send actions.
+✅ For simple state, useState is better, but for complex logic, useReducer is the best choice.
+
+ --------------------------------------------------------------------------------
+ 
+ useReducer Hook in React(Simple Explanation + Example)
+👀 useReducer Kya Hai ?
+    React ka useReducer hook state manage karne ke liye use hota hai.Ye complex state changes ko handle karne me useState se better hota hai.
+
+📌 useReducer Ka Basic Structure
+const [state, dispatch] = useReducer(reducerFunction, initialState);
+✅ state → Current state ko store karega
+✅ dispatch → State ko update karne ke liye action bhejta hai
+✅ reducerFunction → State update karne ka logic hota hai
+✅ initialState → Initial value of state
+
+📌 Simple Counter Example Using useReducer
+jsx
+Copy
+Edit
+import React, { useReducer } from "react";
+
+// Step 1: Reducer Function (State Update Karne Ka Logic)
+const reducer = (state, action) => {
+    if (action.type === "INCREMENT") {
+        return { count: state.count + 1 };
+    }
+    if (action.type === "DECREMENT") {
+        return { count: state.count - 1 };
+    }
+    return state;
+};
+
+// Step 2: Initial State
+const initialState = { count: 0 };
+
+const Counter = () => {
+    // Step 3: useReducer Hook Ka Use
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    return (
+        <div>
+            <h2>Count: {state.count}</h2>
+            <button onClick={() => dispatch({ type: "INCREMENT" })}>+</button>
+            <button onClick={() => dispatch({ type: "DECREMENT" })}>-</button>
+        </div>
+    );
+};
+
+export default Counter;
+📌 Is Code Me Kya Ho Raha Hai ?
+    1️⃣ Reducer function banaya jo state update karta hai(INCREMENT, DECREMENT).
+2️⃣ Initial state { count: 0 } define ki.
+3️⃣ useReducer hook ka use kiya state aur dispatch function lene ke liye.
+4️⃣ dispatch({ type: "INCREMENT" }) action bhej kar state update ho rahi hai.
+
+
+
+📌 Summary
+✅ useReducer state management ke liye use hota hai, jab complex logic ho.
+✅ Redux jaisa concept hai, dispatch() ka use actions send karne ke liye hota hai.
+✅ Simple state ke liye useState better hai, lekin complex logic ke liye useReducer best hai.

@@ -1,0 +1,9 @@
+Props stands for Properties. In React, props are a mechanism used to pass data between components. They are an object that helps in sending data from a parent component to a child component.
+
+With the help of props, we can make components dynamic and reusable. The main purpose of props is to allow each component to receive specific data and render it accordingly. One important point is that props are immutable, meaning the child component cannot change the value of the props.
+
+Key Points:
+Use of Props: To pass data from a parent component to a child component.
+Dynamic Rendering: The same component can be reused with different data.
+Immutable: The data in props cannot be modified inside the child component.
+Reusable Components: Props make components flexible and reusable.

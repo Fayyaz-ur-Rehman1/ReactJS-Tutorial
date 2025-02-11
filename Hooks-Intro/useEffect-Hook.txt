@@ -1,0 +1,166 @@
+What is useEffect Hook =>
+
+React's useEffect is a Hook used to handle side effects in functional components. Side effects are operations that are not directly related to UI, such as:
+✅ Making API calls (fetching data)
+✅ Manipulating the DOM
+✅ Adding or removing event listeners
+✅ Running timers or intervals
+
+In class components, these tasks were handled using componentDidMount, componentDidUpdate, and componentWillUnmount lifecycle methods. However, with the introduction of the useEffect Hook, handling these in functional components has become much easier.
+
+How Does It Work?
+useEffect is a function that runs after the component renders. We pass a callback function inside it, which performs the side effects.
+
+Example:
+jsx
+Copy
+Edit
+import React, { useState, useEffect } from "react";
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // useEffect runs whenever 'count' changes
+  useEffect(() => {
+    console.log("Count has changed:", count);
+  }, [count]);
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+
+export default Example;
+Understanding the Code:
+jsx
+Copy
+Edit
+useEffect(() => { 
+  console.log("Count has changed:", count); 
+}, [count]);
+Whenever the count value changes, useEffect will run.
+Here, console.log() will only execute when count is updated.
+Dependency Array ([count])
+The dependency array determines when useEffect should run.
+If the dependency array is empty ([]), useEffect runs only once when the component mounts (similar to componentDidMount).
+If we put a state variable inside the dependency array ([count]), useEffect will run every time that state changes.
+3 Ways useEffect Runs:
+1️⃣ Run Only Once (On Component Mount)
+jsx
+Copy
+Edit
+useEffect(() => {
+  console.log("Component has mounted!");
+}, []); // Empty array means it runs only once
+2️⃣ Run When a State Changes
+jsx
+Copy
+Edit
+useEffect(() => {
+  console.log("Count has been updated:", count);
+}, [count]); // Runs only when 'count' changes
+3️⃣ Cleanup on Component Unmount
+jsx
+Copy
+Edit
+useEffect(() => {
+  const interval = setInterval(() => {
+    console.log("Interval is running...");
+  }, 1000);
+
+  return () => {
+    clearInterval(interval); // Cleans up when component is removed
+  };
+}, []);
+Important Points to Remember:
+✅ useEffect runs after rendering, not before.
+✅ If the dependency array is empty ([]), useEffect runs only once when the component mounts.
+✅ If a state is inside the dependency array ([count]), useEffect runs whenever that state changes.
+✅ Cleanup functions are necessary when removing event listeners or clearing intervals.
+
+------------------------------------------------------------------------------
+
+React ka useEffect ek Hook hai jo functional components me side effects handle karne ke liye use hota hai. Side effects ka matlab hai wo operations jo directly UI se related nahi hote, jaise:
+✅ API calls (data fetch karna)
+✅ DOM manipulations
+✅ Event listeners ka add/remove karna
+✅ Timers ya intervals chalana
+
+Agar hum class components ki baat karein, toh yeh sab kaam componentDidMount, componentDidUpdate, aur componentWillUnmount methods se hote the. Lekin useEffect Hook ke aane ke baad, functional components me bhi yeh sab aasan ho gaya.
+
+Kaise Kaam Karta Hai?
+useEffect ek function hai jo component render hone ke baad chalta hai. Isme hum ek callback function pass karte hain jo side effects perform karta hai.
+
+Example:
+jsx
+Copy
+Edit
+import React, { useState, useEffect } from "react";
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  // useEffect chal raha hai jab count change hota hai
+  useEffect(() => {
+    console.log("Count change hua:", count);
+  }, [count]);
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
+    </div>
+  );
+}
+
+export default Example;
+Samajhne Ka Tarika:
+useEffect(() => { console.log("Count change hua:", count); }, [count]);
+
+Jab bhi count ka value change hoga, useEffect chalega.
+Yahan console.log() sirf tabhi chalega jab count update hoga.
+Dependency Array ([count])
+
+Ye batata hai ki useEffect kab chalega.
+Agar dependency array khaali [] ho, toh useEffect sirf ek baar chalega (jaise componentDidMount).
+Agar hum kisi state ko [count] me daal dein, toh useEffect har baar us state ke change hone par chalega.
+3 Tarike Se useEffect Chalta Hai:
+1️⃣ Sirf Ek Baar Chalana (Component Mount hone par)
+
+jsx
+Copy
+Edit
+useEffect(() => {
+  console.log("Component mount ho gaya!");
+}, []); // Empty array ka matlab sirf pehli baar chalega
+2️⃣ Kisi State Ke Change Hone Par Chalana
+
+jsx
+Copy
+Edit
+useEffect(() => {
+  console.log("Count update ho gaya:", count);
+}, [count]); // Sirf jab count change hoga tab chalega
+3️⃣ Component Unmount Hone Par Cleanup Karna
+
+jsx
+Copy
+Edit
+useEffect(() => {
+  const interval = setInterval(() => {
+    console.log("Interval chal raha hai...");
+  }, 1000);
+
+  return () => {
+    clearInterval(interval); // Jab component hat jayega tab ye cleanup karega
+  };
+}, []);
+Points Jo Yaad Rakhne Chahiye:
+✅ useEffect render hone ke baad chalta hai, render hone ke pehle nahi.
+✅ Agar dependency array khaali ho ([]), toh sirf component mount hone par chalega.
+✅ Agar dependency array me koi state ho ([count]), toh jab bhi wo state change hogi, useEffect chalega.
+✅ Cleanup function return karna zaroori hai jab humein event listeners ya intervals remove karne ho.
+
