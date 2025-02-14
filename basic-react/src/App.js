@@ -1,5 +1,6 @@
 import './App.css';
 import FnComp from './Components/FnComp';
+import EventHandel from './Components/EventHandle';
 import Props from './Components/Props';
 import State from './Components/State';
 
@@ -8,7 +9,8 @@ function App() {
     <div className="App">
       {/* <FnComp /> */}
       {/* <Props name="fayyazurrehman" age="18" /> */}
-      <State />
+      {/* <State /> */}
+      <EventHandel />
     </div>
   );
 }
